@@ -10,3 +10,9 @@ async function loadData() {
 }
 const data = await loadData();
 console.log(data); // gibt die Daten der API oder false in der Konsole aus
+
+const domfirstName = document.querySelector('#firstName');
+const domlastName = document.querySelector('#lastName');
+
+domfirstName.innerHTML = data.user.firstname;
+domlastName.innerHTML = data.user.lastname;
