@@ -6,25 +6,23 @@ header('Content-Type: application/json');
 require_once '../system/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Eingaben
+    // Eingaben auslesen und trimmen
     $email     = trim($_POST['email'] ?? '');
     $password  = trim($_POST['password'] ?? '');
     $firstName = trim($_POST['firstname'] ?? '');
     $lastName  = trim($_POST['lastname'] ?? '');
     $birthdate = trim($_POST['birthdate'] ?? '');
 
-    // Pflichtfelder prüfen
+    // Prüfung auf leere Felder
     if (!$email || !$password || !$firstName || !$lastName || !$birthdate) {
-        http_response_code(400);
         echo json_encode(["status" => "error", "message" => "All fields are required"]);
         exit;
     }
 
-    // Existierende E-Mail prüfen
+    // Prüfen ob Email schon existiert
     $stmt = $pdo->prepare("SELECT id FROM users WHERE email = :email");
     $stmt->execute([':email' => $email]);
     if ($stmt->fetch()) {
-        http_response_code(409); // Conflict
         echo json_encode(["status" => "error", "message" => "Email is already in use"]);
         exit;
     }
@@ -32,35 +30,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Passwort hashen
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Transaktion: Benutzer + Profil speichern
-    $pdo->beginTransaction();
+    try {
+        // Transaktion starten
+        $pdo->beginTransaction();
 
-    // Benutzer einfügen
-    $insertUser = $pdo->prepare("INSERT INTO users (email, password) VALUES (:email, :pass)");
-    $insertUser->execute([
-        ':email' => $email,
-        ':pass'  => $hashedPassword
-    ]);
+        // User in users-Tabelle einfügen
+        $insertUser = $pdo->prepare("INSERT INTO users (email, password) VALUES (:email, :pass)");
+        $insertUser->execute([
+            ':email' => $email,
+            ':pass'  => $hashedPassword
+        ]);
 
-    // ID des neuen Benutzers holen
-    $userId = $pdo->lastInsertId();
+        // Neue User-ID abrufen
+        $userId = $pdo->lastInsertId();
 
-    // Profil einfügen
-    $insertProfile = $pdo->prepare("
-        INSERT INTO user_profiles (user_id, first_name, last_name, birthdate)
-        VALUES (:user_id, :first_name, :last_name, :birthdate)
-    ");
-    $insertProfile->execute([
-        ':user_id'    => $userId,
-        ':first_name' => $firstName,
-        ':last_name'  => $lastName,
-        ':birthdate'  => $birthdate
-    ]);
+        // Profildaten in user_profiles speichern
+        $insertProfile = $pdo->prepare("
+            INSERT INTO user_profiles (user_id, firstname, lastname, birthdate)
+            VALUES (:user_id, :firstname, :lastname, :birthdate)
+        ");
+        $insertProfile->execute([
+            ':user_id'    => $userId,
+            ':firstname' => $firstName,
+            ':lastname'  => $lastName,
+            ':birthdate'  => $birthdate
+        ]);
 
-    $pdo->commit();
+        // Transaktion abschließen
+        $pdo->commit();
 
-    echo json_encode(["status" => "success"]);
+        echo json_encode(["status" => "success"]);
+
+    } catch (Exception $e) {
+        $pdo->rollBack();
+        echo json_encode(["status" => "error", "message" => "Registration failed: " . $e->getMessage()]);
+    }
+
 } else {
-    http_response_code(405); // Method Not Allowed
     echo json_encode(["status" => "error", "message" => "Invalid request method"]);
 }
