@@ -1,5 +1,5 @@
 async function loadData() {
-    const url = 'https://api.com'; // mit korrekter API-URL ersetzen
+    const url = '/api/profile.php'; // mit korrekter API-URL ersetzen
     try {
         const response = await fetch(url);
         return await response.json();
