@@ -6,12 +6,16 @@ document
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
+    const firstname = document.getElementById("firstname").value.trim();
+    const lastname = document.getElementById("lastname").value.trim();
+    const birthdate = document.getElementById("birthdate").value.trim();
+    const age = document.getElementById("age").value.trim();
 
     try {
       const response = await fetch("api/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ email, password }),
+        body: new URLSearchParams({ email, password, firstname, lastname, birthdate, age }),
       });
       const result = await response.json();
 
