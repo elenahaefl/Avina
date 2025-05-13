@@ -22,7 +22,7 @@ domfirstName.innerHTML = data.user.firstname;
 domlastName.innerHTML = data.user.lastname;
 dombirthdate.value = data.user.birthdate;
 dombirthday.innerHTML = data.user.birthdate;
-domuseremail.innerHTML = data.user.email;
+domuseremail.innerHTML = data.user.email;3
 
 //__________________________________________________________
 // Alter berechnen
