@@ -1,4 +1,9 @@
 /* style.css */
+
+/* Schriftart */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* Root-Element */
 :root {
   --lightpink:#FFE1F9;
   --lightblue: #C2F5FF;
@@ -10,9 +15,10 @@
   --yellow: #FFEC9A;
   --text-color: #38393E;
 
-  font-family: ;
+  --main-font: 'Righteous', regular ;
 }
 
+/* Grundlegende Stile */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
