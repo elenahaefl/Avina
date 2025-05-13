@@ -21,8 +21,10 @@ body {
 }
 
 h1 {
-  margin-bottom: 1em;
-  color: var(--pink);
+  margin: 20px 0;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
 }
 
 form > div {
