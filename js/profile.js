@@ -65,5 +65,29 @@ async function addData(url, data) {
     const savebirthdate = document.querySelector('#updatebirthday');
 
     savebirthdate.addEventListener('click', async (e) => {
-        console.log(inputbirthdate.value);
+        const updatebirthdate = inputbirthdate.value;
+        const url = '/api/profile/updateprofile.php';
+        const data = {
+            birthdate: updatebirthdate
+        };
+        const dataUpdated = await addData(url, data);
+        console.log(dataUpdated);
     });
+
+ //I want to update the data to the API and then reload the page (Copilot eingabe) 
+async function addData(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return false
+
+    }
+}
