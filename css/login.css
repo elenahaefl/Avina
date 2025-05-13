@@ -30,6 +30,12 @@ form#registerForm {
   gap: 15px;
 }
 
+form#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert den Login-Button */
+}
+
 /* Eingabefelder */
 form div {
   display: flex;
@@ -74,8 +80,8 @@ button[type="submit"],
 
 input[type="email"],
 input[type="password"] {
-  width: 100%; /* oder eine spezifische Breite */
-  height: 49px; /* gleiche Höhe wie andere Boxen */
+  width: 400px; /* oder eine spezifische Breite */
+  height: 46px; /* gleiche Höhe wie andere Boxen */
   box-sizing: border-box;
 }
 
@@ -121,4 +127,25 @@ a:hover {
     
   }
 
+  form#loginForm {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%; /* Textboxen passen sich der Bildschirmbreite an */
+  }
+
+  button[type="submit"] {
+    width: 33%; /* Button passt sich der Bildschirmbreite an */
+  }
+
+  h2 {
+    display: none; /* Versteckt h2 */
+  }
+
+  h3 {
+    display: block; /* Zeigt h3 stattdessen an */
+  }
 }
