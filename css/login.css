@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--lightpink);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  margin-top: 30px;
+}
+
+/* Überschrift */
+
+
+/* Formularbox */
+form#registerForm {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 400px;
+  background-color: var(--lightpink);
+  padding: 0px 30px 30px 30px;
+  border-radius: 15px;
+  gap: 15px;
+}
+
+/* Eingabefelder */
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #444;
+  font-weight: 500;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid var(--pink);
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: var(--lightpink); /* Neue Hintergrundfarbe für Textboxen */
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+/* Buttons */
+button[type="submit"],
+.button-secondary {
+  width: 233px;
+  height: 49px;
+  border-radius: 15px;
+  border: 2px solid var(--pink);
+  background-color: transparent;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* oder eine spezifische Breite */
+  height: 49px; /* gleiche Höhe wie andere Boxen */
+  box-sizing: border-box;
+}
+
+button[type="submit"]:hover,
+.button-secondary:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+/* Letzter Button */
+.button-filled {
+  background-color: var(--pink);
+  color: white;
+}
+
+/* Hinweis unten */
+p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsiv */
+@media (max-width: 500px) {
+  button,
+  .button-secondary,
+  .button-filled {
+    width: 100%;
+  }
+
+  form#registerForm {
+    padding: 20px;
+    
+  }
+
+}
