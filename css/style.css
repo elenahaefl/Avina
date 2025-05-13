@@ -1,4 +1,10 @@
 /* style.css */
+:root {
+  --pink:#F8BFED;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
