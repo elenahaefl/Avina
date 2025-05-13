@@ -8,14 +8,14 @@ async function loadData() {
         return false;
     }
 }
-const data = await loadData();
-console.log(data); // gibt die Daten der API oder false in der Konsole aus
+//const data = await loadData();
+//console.log(data); // gibt die Daten der API oder false in der Konsole aus
 
 const domfirstName = document.querySelector('#firstname');
 const domlastName = document.querySelector('#lastname');
 
-domfirstName.innerHTML = data.user.firstname;
-domlastName.innerHTML = data.user.lastname;
+// domfirstName.innerHTML = data.user.firstname;
+// domlastName.innerHTML = data.user.lastname;
 
 //__________________________________________________________
 // Adding Vorname und Nachname to the Database
@@ -64,4 +64,6 @@ async function addData(url, data) {
     const inputbirthdate = document.querySelector('#inputbirthdate');
     const savebirthdate = document.querySelector('#updatebirthday');
 
-    
+    savebirthdate.addEventListener('click', async (e) => {
+        console.log(inputbirthdate.value);
+    });
