@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(lightyellow);
+    background-color: var(--lightyellow);
     font-family: var(--main-font);
     display: flex;
     flex-direction: column;
@@ -13,4 +13,22 @@ body {
   /* Logo */
   .logo {
     width: 120px;
+  }
+
+  .button-link {
+    width: 233px;
+    height: 49px;
+    border-radius: 15px;
+    border: 2px solid var(--pink);
+    background-color: transparent;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: center;
+    transition: all 0.3s;
+  }
+  
+  .button-link:hover {
+    background-color: var(--yellow); 
   }
