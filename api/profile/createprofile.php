@@ -14,11 +14,30 @@ require_once '../../system/config.php';
 // Logged-in user ID
 $loggedInUserId = $_SESSION['user_id'];
 
+// Read JSON input from fetch request
+$input = json_decode(file_get_contents('php://input'), true);
 
-// Insert user profile into the database
-$insertStmt = $pdo->prepare("INSERT INTO user_profiles (user_id, firstname, lastname, birthdate) VALUES (:user_id, :firstname, :lastname, :birthdate)");
-$insertStmt->bindParam(':user_id', $loggedInUserId, PDO::PARAM_INT);
-$insertStmt->bindParam(':firstname', 'Benjamin', PDO::PARAM_STR);
-$insertStmt->bindParam(':lastname', 'Example value', PDO::PARAM_STR);
-$insertStmt->bindParam(':birthdate', NULL, PDO::PARAM_NULL);
-$insertStmt->execute();
+// Validate input
+if (!isset($input['firstname']) || !isset($input['lastname'])) {
+    http_response_code(400);
+    echo json_encode(["error" => "Firstname and lastname are required."]);
+    exit;
+}
+
+$firstname = trim($input['firstname']);
+$lastname = trim($input['lastname']);
+
+// Insert into DB
+$stmt = $pdo->prepare("INSERT INTO user_profiles (user_id, firstname, lastname, birthdate) VALUES (:user_id, :firstname, :lastname, :birthdate)");
+$stmt->bindParam(':user_id', $loggedInUserId, PDO::PARAM_INT);
+$stmt->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+$stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+$stmt->bindParam(':birthdate', $input['birthdate'], PDO::PARAM_STR); // Assuming birthdate is optional
+
+try {
+    $stmt->execute();
+    echo json_encode(["success" => true, "message" => "Profile created."]);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(["error" => "Database error: " . $e->getMessage()]);
+}
