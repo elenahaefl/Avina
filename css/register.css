@@ -49,18 +49,12 @@ input {
   border-radius: 15px;
   font-size: 1rem;
   transition: border-color 0.3s;
+  background-color: #C2F5FF; /* Neue Hintergrundfarbe für Textboxen */
 }
 
 input:focus {
   outline: none;
   border-color: #4fb6c7;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 100%; /* oder eine spezifische Breite */
-  height: 49px; /* gleiche Höhe wie andere Boxen */
-  box-sizing: border-box;
 }
 
 /* Buttons */
@@ -77,6 +71,13 @@ button[type="submit"],
   cursor: pointer;
   align-self: center;
   transition: all 0.3s;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* oder eine spezifische Breite */
+  height: 49px; /* gleiche Höhe wie andere Boxen */
+  box-sizing: border-box;
 }
 
 button[type="submit"]:hover,
