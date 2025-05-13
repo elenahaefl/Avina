@@ -35,6 +35,7 @@ form#registerForm {
 form div {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0px;
 }
 
 label {
