@@ -30,7 +30,7 @@ form#registerForm {
   width: 90%;
   max-width: 400px;
   background-color: #C2F5FF;
-  padding: 30px;
+  padding: 0px 30px 30px 30px;
   border-radius: 15px;
   gap: 15px;
 }
@@ -58,6 +58,18 @@ input {
 input:focus {
   outline: none;
   border-color: #4fb6c7;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* gleiche Breite wie andere Textboxen */
+  height: 49px; /* gleiche Höhe wie andere Textboxen */
+  box-sizing: border-box;
+  padding: 12px; /* Konsistenz mit anderen Eingabefeldern */
+  border: 2px solid #79C9D9;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 /* Buttons */
