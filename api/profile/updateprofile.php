@@ -18,7 +18,7 @@ $loggedInUserId = $_SESSION['user_id'];
 $input = json_decode(file_get_contents('php://input'), true);
 
 // Validate input
-if (!isset($input['birthdate'])) || !isset($input['firstname']) || !isset($input['lastname'])) {
+if (!isset($input['birthdate']) || !isset($input['firstname']) || !isset($input['lastname'])) {
     http_response_code(400);
     echo json_encode(["error" => "Wir brauchen dein Geburtstag."]);
     exit;
