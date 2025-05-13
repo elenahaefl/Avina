@@ -30,9 +30,11 @@ body {
 h1 {
   margin: 20px 0;
   color: #333;
-  font-size: 2rem;
+  font-size: 100px;
   text-align: center;
   font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
