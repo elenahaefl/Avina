@@ -56,3 +56,12 @@ async function addData(url, data) {
 
     }
 }
+
+// __________________________________________________________
+// Update Vorname und Nachname und Geburtstag
+// __________________________________________________________
+
+    const inputbirthdate = document.querySelector('#inputbirthdate');
+    const savebirthdate = document.querySelector('#updatebirthday');
+
+    
