@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #C2F5FF;
+  background-color: var(--lightblue);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ form#registerForm {
   flex-direction: column;
   width: 90%;
   max-width: 400px;
-  background-color: #C2F5FF;
+  background-color: var(--lightblue);
   padding: 0px 30px 30px 30px;
   border-radius: 15px;
   gap: 15px;
@@ -45,11 +45,11 @@ label {
 
 input {
   padding: 12px;
-  border: 2px solid #79C9D9;
+  border: 2px solid var(--blue);
   border-radius: 15px;
   font-size: 1rem;
   transition: border-color 0.3s;
-  background-color: #C2F5FF; /* Neue Hintergrundfarbe für Textboxen */
+  background-color: var(--lightblue); /* Neue Hintergrundfarbe für Textboxen */
 }
 
 input:focus {
@@ -63,7 +63,7 @@ button[type="submit"],
   width: 233px;
   height: 49px;
   border-radius: 15px;
-  border: 2px solid #79C9D9;
+  border: 2px solid var(--blue);
   background-color: transparent;
   color: #333;
   font-size: 1rem;
@@ -82,13 +82,13 @@ input[type="password"] {
 
 button[type="submit"]:hover,
 .button-secondary:hover {
-  background-color: #79C9D9;
+  background-color: var(--blue);
   color: white;
 }
 
 /* Letzter Button */
 .button-filled {
-  background-color: #79C9D9;
+  background-color: var(--blue);
   color: white;
 }
 
