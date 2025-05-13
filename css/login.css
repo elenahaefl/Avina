@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--lightpink);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--main-font);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +106,7 @@ p {
 }
 
 a {
-  color: var(--pink);
+  color: #FB92E7;
   text-decoration: none;
 }
 
@@ -141,5 +141,4 @@ a:hover {
     width: 33%; /* Button passt sich der Bildschirmbreite an */
   }
 
- 
 }
