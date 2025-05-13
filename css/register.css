@@ -1,0 +1,126 @@
+/* Globales Layout */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #C2F5FF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  margin-top: 30px;
+}
+
+/* Überschrift */
+h1 {
+  margin: 20px 0;
+  color: #333;
+  font-size: 2rem;
+}
+
+/* Formularbox */
+form#registerForm {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 400px;
+  background-color: #C2F5FF;
+  padding: 30px;
+  border-radius: 15px;
+  gap: 15px;
+}
+
+/* Eingabefelder */
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #444;
+  font-weight: 500;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #79C9D9;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4fb6c7;
+}
+
+/* Buttons */
+button[type="submit"],
+.button-secondary {
+  width: 233px;
+  height: 49px;
+  border-radius: 15px;
+  border: 2px solid #79C9D9;
+  background-color: transparent;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s;
+}
+
+button[type="submit"]:hover,
+.button-secondary:hover {
+  background-color: #79C9D9;
+  color: white;
+}
+
+/* Letzter Button */
+.button-filled {
+  background-color: #79C9D9;
+  color: white;
+}
+
+/* Hinweis unten */
+p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+a {
+  color: #4fa4b4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsiv */
+@media (max-width: 500px) {
+  button,
+  .button-secondary,
+  .button-filled {
+    width: 100%;
+  }
+
+  form#registerForm {
+    padding: 20px;
+    
+  }
+
+  form#registerForm input {
+  width: 100%;          /* immer so breit wie der Container       */
+  height: 49px;         /* exakt gleiche Höhe wie die Buttons     */
+  box-sizing: border-box;
+}
+}
