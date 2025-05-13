@@ -1,8 +1,14 @@
 /* style.css */
 :root {
-  --pink:#F8BFED;
-  --secondary-color: #2ecc71;
-  --text-color: #333;
+  --lightpink:#FFE1F9;
+  --lightblue: #C2F5FF;
+  --lightgreen: #B8E9BD;
+  --lightyellow: #FFF6CC;
+  --pink: #F8BFED;
+  --blue: #79C9D9;
+  --green: #7FBD85;
+  --yellow: #FFEC9A;
+  --text-color: #38393E;
 
 }
 
@@ -15,6 +21,7 @@ body {
 
 h1 {
   margin-bottom: 1em;
+  color: var(--pink);
 }
 
 form > div {
