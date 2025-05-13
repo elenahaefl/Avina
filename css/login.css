@@ -141,11 +141,5 @@ a:hover {
     width: 33%; /* Button passt sich der Bildschirmbreite an */
   }
 
-  h2 {
-    display: none; /* Versteckt h2 */
-  }
-
-  h3 {
-    display: block; /* Zeigt h3 stattdessen an */
-  }
+ 
 }

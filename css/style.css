@@ -72,3 +72,12 @@ p {
   margin-top: 1em;
   font-family: var(--main-font);
 }
+
+/* Änderung Titelgrösse bei verkleinertem Bildschirm */
+ h2 {
+    display: none; /* Versteckt h2 */
+  }
+
+  h3 {
+    display: block; /* Zeigt h3 stattdessen an */
+ }
