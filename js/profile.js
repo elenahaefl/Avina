@@ -1,5 +1,5 @@
 async function loadData() {
-    const url = '/api/profile/profile.php'; // mit korrekter API-URL ersetzen
+    const url = '/api/profile/readprofile.php'; // mit korrekter API-URL ersetzen
     try {
         const response = await fetch(url);
         return await response.json();
@@ -8,14 +8,44 @@ async function loadData() {
         return false;
     }
 }
-//const data = await loadData();
-//console.log(data); // gibt die Daten der API oder false in der Konsole aus
+const data = await loadData();
+console.log(data); // gibt die Daten der API oder false in der Konsole aus
 
 const domfirstName = document.querySelector('#firstname');
 const domlastName = document.querySelector('#lastname');
+const dombirthday = document.querySelector('#userbirthday');
+const domuserage = document.querySelector('#userage');
+const domuseremail = document.querySelector('#useremail');
+const dombirthdate = document.querySelector('#inputbirthdate');
 
-// domfirstName.innerHTML = data.user.firstname;
-// domlastName.innerHTML = data.user.lastname;
+domfirstName.innerHTML = data.user.firstname;
+domlastName.innerHTML = data.user.lastname;
+dombirthdate.value = data.user.birthdate;
+dombirthday.innerHTML = data.user.birthdate;
+domuseremail.innerHTML = data.user.email;
+
+//__________________________________________________________
+// Alter berechnen
+//__________________________________________________________
+
+// Geburtsdatum in ein Date-Objekt umwandeln
+const birthdate = new Date(data.user.birthdate);
+
+// Aktuelles Datum
+const today = new Date();
+
+// Alter berechnen
+let age = today.getFullYear() - birthdate.getFullYear();
+const monthDiff = today.getMonth() - birthdate.getMonth();
+const dayDiff = today.getDate() - birthdate.getDate();
+
+// Falls Geburtstag in diesem Jahr noch nicht war, Alter -1
+if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+  age--;
+}
+
+// Alter anzeigen
+domuserage.innerHTML = age;
 
 //__________________________________________________________
 // Adding Vorname und Nachname to the Database
@@ -24,7 +54,7 @@ const domlastName = document.querySelector('#lastname');
 
 const inputfirstname = document.querySelector('#inputfirstname');
 const inputlastname = document.querySelector('#inputlastname');
-const savebutton = document.querySelector('#saveButton');
+const savebutton = document.querySelector('#saveadditionalinfo');
 
 savebutton.addEventListener('click', async (e) => {
     let firstname = inputfirstname.value;
@@ -70,12 +100,12 @@ async function addData(url, data) {
         const data = {
             birthdate: updatebirthdate
         };
-        const dataUpdated = await addData(url, data);
+        const dataUpdated = await updateData(url, data);
         console.log(dataUpdated);
     });
 
  //I want to update the data to the API and then reload the page (Copilot eingabe) 
-async function addData(url, data) {
+async function updateData(url, data) {
     try {
         const response = await fetch(url, {
             method: 'PUT',
@@ -91,3 +121,8 @@ async function addData(url, data) {
 
     }
 }
+
+// __________________________________________________________
+// Delete Vorname und Nachname und Geburtstag
+// __________________________________________________________
+

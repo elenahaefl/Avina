@@ -24,6 +24,7 @@ if (!isset($input['firstname']) || !isset($input['lastname'])) {
     exit;
 }
 
+
 $firstname = trim($input['firstname']);
 $lastname = trim($input['lastname']);
 
