@@ -15,13 +15,13 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.status === "success") {
-      alert("Login successful!");
-      window.location.href = "protected.html";
+      alert("Anmeldung erfolgreich!");
+      window.location.href = "auswahl.html";
     } else {
-      alert(result.message || "Login failed.");
+      alert(result.message || "Anmeldung fehlgeschlagen.");
     }
   } catch (error) {
-    console.error("Error:", error);
-    alert("Something went wrong!");
+    console.error("Fehler:", error);
+    alert("Etwas ist schiefgelaufen!");
   }
 });
