@@ -16,10 +16,11 @@ body {
   }
 
   .button-link {
-    width: 233px;
-    height: 49px;
+    width: 100%; /* Gleiche Breite für beide Buttons */
+    max-width: 40vw; /* Maximale Breite für größere Bildschirme */
+    height: auto; /* Automatische Höhe für Konsistenz */
     border-radius: 15px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--yellow);
     background-color: transparent;
     color: #333;
     font-size: 1rem;
@@ -27,8 +28,36 @@ body {
     cursor: pointer;
     align-self: center;
     transition: all 0.3s;
+    padding: 15px; /* Gleiche Polsterung für beide Buttons */
+    margin-bottom: 20px;
   }
   
   .button-link:hover {
     background-color: var(--yellow); 
   }
+
+  @media (max-width: 500px) { /* Passt die Breite an kleinere Bildschirme an */
+    .button-link {
+      width: 90%; /* Breite auf 90% des Bildschirms für kleine Geräte */
+      max-width: none; /* Entfernt die maximale Breite für kleine Bildschirme */
+    }
+  }
+
+  ul {
+  list-style: none; /* Entfernt die Aufzählungszeichen */
+  padding: 0; /* Entfernt den Standard-Einzug */
+  margin: 0; /* Entfernt den Standard-Abstand */
+}
+
+a {
+  text-decoration: none; /* Entfernt den Unterstrich von Links */
+}
+
+a:hover {
+  text-decoration: none; /* Entfernt den Unterstrich auch beim Hover */
+}
+
+ul li {
+  margin-bottom: 40px; /* Vergrößert den Abstand zwischen den Listenelementen */
+}
+
