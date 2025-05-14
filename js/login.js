@@ -24,3 +24,4 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     alert("Etwas ist schiefgelaufen!");
   }
 });
+

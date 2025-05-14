@@ -1,6 +1,6 @@
 async function checkAuth() {
     try {
-      const response = await fetch("/api/protected.php", {
+      const response = await fetch("/api/auswahl.php", {
         credentials: "include",
       });
   
@@ -11,11 +11,6 @@ async function checkAuth() {
   
       const result = await response.json();
   
-      // Display user data in the protected content div
-      const protectedContent = document.getElementById("protectedContent");
-      protectedContent.innerHTML = `
-        <h4>Wilkommen, ${result.firstname,lastname}!</h4>
-      `;
   
       return true;
     } catch (error) {
@@ -28,7 +23,7 @@ async function checkAuth() {
   // Check auth when page loads
   window.addEventListener("load", checkAuth);
 
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     // Get all card elements
     const cards = document.querySelectorAll('.card');

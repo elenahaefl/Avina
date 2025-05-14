@@ -13,4 +13,6 @@ if (!isset($_SESSION['user_id'])) {
 // If they are logged in, return user data
 echo json_encode([
     "status" => "success",
+    "user_id" => $_SESSION['user_id'],
+    "email" => $_SESSION['email']
 ]);
