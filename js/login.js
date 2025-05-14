@@ -15,7 +15,6 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.status === "success") {
-      alert("Anmeldung erfolgreich!");
       window.location.href = "auswahl.html";
     } else {
       alert(result.message || "Anmeldung fehlgeschlagen.");
