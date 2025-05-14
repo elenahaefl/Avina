@@ -36,18 +36,6 @@ form div {
   position: relative;
 }
 
-form div::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border: 2px solid var(--yellow); /* Gelber Rahmen um jedes Feld */
-  border-radius: 15px;
-  pointer-events: none;
-}
-
 
 label {
   margin-bottom: 5px;
@@ -70,7 +58,7 @@ button,
   width: 233px;
   height: 49px;
   border-radius: 15px;
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--darkyellow); /* Rahmenfarbe auf Dunkelgelb geändert */
   background-color: transparent;
   color: #333;
   font-size: 1rem;
@@ -90,15 +78,23 @@ input[type="password"] {
 button:hover,
 .button-secondary:hover {
   background-color: var(--yellow);
-  color: white;
+  color: var(text-color);
 }
 
 /* Letzter Button */
 .button-filled {
-  background-color: var(--yellow);
+  background-color: var(--darkyellow);
   color: white;
 }
 
+.border_profile {
+  width: 100vw; /* Macht die Buttons responsiv */
+  max-width: 40vw; /* Maximale Breite für größere Bildschirme */
+  border: 2px solid var(--yellow);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
 /* Responsiv */
 @media (max-width: 500px) {
@@ -113,4 +109,15 @@ button:hover,
     
   }
 
+  .border_profile {
+    width: 100vw; /* Passt die Breite an kleinere Bildschirme an */
+  }
+
+  body {
+    font-size: 0.9rem; /* Verkleinert die Schriftgröße für kleinere Bildschirme */
+  }
+
+  .border_profile {
+    font-size: 0.8rem; /* Verkleinert die Schriftgröße innerhalb der Buttons */
+  }
 }
