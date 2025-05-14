@@ -21,16 +21,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f5f5;
+    background-color: var(--beige);
 }
-
-.container {
+.containerbig {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 20px;
-}
+  }
+  
+  .container {
+    flex: 0 0 calc(33.333% - 20px); /* 3 Elemente pro Zeile (minus Abstand) */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
 
 .cardgreen {
     display: flex;
@@ -44,7 +50,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease
 }
 
 .cardyellow {
@@ -59,7 +65,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease
 }
 
 .cardpink {
@@ -74,7 +80,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease
 }
 
 .cardblue {
@@ -89,7 +95,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease
 }
 
 .card:hover {
@@ -103,7 +109,7 @@ body {
     margin-bottom: 10px;
 }
 
-.card h5 {
+.card h2 {
     margin: 10px 0 0;
 }
 
@@ -123,7 +129,7 @@ body {
 }
 
 .cardyellow.selected {
-    border: 8px solid var(--darkyellow);  /* Border color for selected state */
+    border: 8px solid var(--dark);  /* Border color for selected state */
     transform: scale(1.05);
 }
 
@@ -135,5 +141,4 @@ body {
 .icons_categories {
     width: 80px;
     height: 100px;
-    /* margin-bottom: 10px; */
 }
