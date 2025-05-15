@@ -7,7 +7,12 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-  }
+}
+
+.nav-items-wrapper{
+    background-color: var(--lightyellow);
+}
+
 .weiterbutton {
     background-color: var(--darkgrey);
 }
@@ -15,12 +20,12 @@ body {
 .weiterbutton:hover {
     background-color: var(--green);
   
-    }
+}
 
 .logoutBtn {
     border: 2px solid var(--darkgrey);
 
-  } 
+} 
 
 
 
