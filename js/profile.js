@@ -39,7 +39,7 @@ const dayDiff = today.getDate() - birthdate.getDate();
 
 // Falls Geburtstag in diesem Jahr noch nicht war, Alter -1
 if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-  age--;
+    age--;
 }
 
 // Alter anzeigen
@@ -89,20 +89,20 @@ domuserage.innerHTML = age;
 // Update Vorname und Nachname und Geburtstag
 // __________________________________________________________
 
-    // const inputbirthdate = document.querySelector('#inputbirthdate');
-    // const savebirthdate = document.querySelector('#updatebirthday');
+// const inputbirthdate = document.querySelector('#inputbirthdate');
+// const savebirthdate = document.querySelector('#updatebirthday');
 
-    // savebirthdate.addEventListener('click', async (e) => {
-    //     const updatebirthdate = inputbirthdate.value;
-    //     const url = '/api/profile/updateprofile.php';
-    //     const data = {
-    //         birthdate: updatebirthdate
-    //     };
-    //     const dataUpdated = await updateData(url, data);
-    //     console.log(dataUpdated);
-    // });
+// savebirthdate.addEventListener('click', async (e) => {
+//     const updatebirthdate = inputbirthdate.value;
+//     const url = '/api/profile/updateprofile.php';
+//     const data = {
+//         birthdate: updatebirthdate
+//     };
+//     const dataUpdated = await updateData(url, data);
+//     console.log(dataUpdated);
+// });
 
- //I want to update the data to the API and then reload the page (Copilot eingabe) 
+//I want to update the data to the API and then reload the page (Copilot eingabe)
 // async function updateData(url, data) {
 //     try {
 //         const response = await fetch(url, {

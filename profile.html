@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Protected Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/profile.css" />
-  </head>
-  <header style="position: relative; ">
-    <div class="header-container" style="background: var(--blau);">
-    <a href="#" class="logo"> liebibyjules</a>
-    
-    <div class="nav-items-wrapper"> 
-    <div class="nav-item"> <a href="#">Home</a></div>
-    <div class="nav-item"> <a href="about.html">Über Liebi</a></div>
-    <div class="nav-item"> <a href="#contact">Kontakt</a></div>
-    <div class="nav-item"> <a href="#shop">Shop</a></div>
-    </div>
-    
-    
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Protected Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+
+<body>
+  <header class="header-container">
+    <nav class="nav-items-wrapper" aria-label="Main navigation">
+      <a class="nav-item" href="auswahl.html" aria-label="Home">
+        <img class="icons_categories" src="images/house.svg" alt="Home">
+      </a>
+
+      <a class="nav-item" href="" aria-label="Search">
+        <img class="icons_categories" src="images/magnifying-glass.svg" alt="Search">
+      </a>
+
+      <a class="nav-item" href="swipe.html" aria-label="Swipe">
+        <img class="icons_categories" src="images/hand-swipe-right.svg" alt="Swipe">
+      </a>
+
+      <a class="nav-item" href="" aria-label="Chat">
+        <img class="icons_categories" src="images/chat-circle-dots.svg" alt="Chat">
+      </a>
+
+      <a class="nav-item" href="profile.html" aria-label="User Profile">
+        <img class="icons_categories" src="images/user.svg" alt="User Profile">
+      </a>
+    </nav>
   </header>
-  <body>
 
-    <h1>AVINA</h1>
-    <h3>Profil</h3>
+  <h1>AVINA</h1>
+  <h3>Profil</h3>
 
-    <!-- This is where we'll dynamically show the protected content -->
-    <section id="userprofile">
-     <div class="border_profile">
+  <!-- This is where we'll dynamically show the protected content -->
+  <section id="userprofile">
+    <div class="border_profile">
       <p>Vorname: <span id="firstname"></span></p>
-     </div>
-     <div class="border_profile">
+    </div>
+    <div class="border_profile">
       <p>Name: <span id="lastname"></span></p>
-      </div>
-      <div class="border_profile">
+    </div>
+    <div class="border_profile">
       <p>E-Mail: <span id="useremail"></span></p>
-      </div>
-      <div class="border_profile">
+    </div>
+    <div class="border_profile">
       <p>Geburtstag: <span id="userbirthday"></span></p>
-      </div>
-      <div class="border_profile">
+    </div>
+    <div class="border_profile">
       <p>Alter: <span id="userage"></span></p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-   
 
-   <!-- <section id="addadditionalinfo">
+
+  <!-- <section id="addadditionalinfo">
       <h2>Zusätzliche Informationen</h2>
       <input type="text" id="inputfirstname" placeholder="Vorname" />
       <input type="text" id="inputlastname" placeholder="Name" />
@@ -57,11 +69,12 @@
       <input type="date" id="inputbirthdate" />
       <button id="updatebirthday">Geburtstag Aktualisieren</button>
     </section> -->
-      
 
-    <button id="logoutBtn">Logout</button>
 
-    <script type="module" src="js/profile.js"></script>
-    <script src="js/logout.js"></script>
-  </body>
+  <button id="logoutBtn">Logout</button>
+
+  <script type="module" src="js/profile.js"></script>
+  <script src="js/logout.js"></script>
+</body>
+
 </html>
