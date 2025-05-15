@@ -110,6 +110,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* Responsiv */
 @media (max-width: 500px) {
   button,

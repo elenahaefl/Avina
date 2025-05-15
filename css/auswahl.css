@@ -19,18 +19,22 @@ header .icons_categories {
 }
 
 .weiterbutton {
-    background-color: var(--darkgrey);
+    background-color: #FFF6CC;
+    padding-top: 30px;
+    color: white;
+    width: 50vw; /* Macht die Buttons responsiv */
+    max-width: 10vw; /* Maximale Breite für größere Bildschirme */
+    border: 2px solid var(--yellow);
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .weiterbutton:hover {
-    background-color: var(--green);
-  
+    background-color: var(--yellow);
+    color: var(--text-color);
 }
 
-.logoutBtn {
-    border: 2px solid var(--darkgrey);
-
-} 
 
   body {
     font-family: Arial, sans-serif;
