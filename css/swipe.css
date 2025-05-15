@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
@@ -39,6 +40,8 @@ body {
     width: 80px;
     border-radius: 50%;  /* Fully circular */ 
     background-color: var(--lightpink);
+    display: flex;
+    justify-content: center;
 }
 
 .cross:hover {
@@ -49,7 +52,6 @@ body {
     height: 60px;
     width: 60px;
     margin-top: 10px;
-    margin-left: 10px;
 }
 
 
@@ -58,6 +60,8 @@ body {
     width: 80px;
     border-radius: 50%;  /* Fully circular */ 
     background-color: var(--lightgreen);
+    display: flex;
+    justify-content: center;
 }
 
 .checkmark:hover {
@@ -69,7 +73,4 @@ body {
     height: 60px;
     width: 60px;
     margin-top: 10px;
-    margin-left: 10px;
 }
-
-
