@@ -9,9 +9,14 @@ body {
     min-height: 100vh;
   }
 
-  button#logoutBtn {
-    background-color: var(--lightgrey);
+.logoutBtn {
+    border: 2px solid var(--darkgrey);
   } 
+
+  .logoutBtn:hover {
+    background-color: var(--darkgrey);
+    color: var(--darkblue);
+    }
 
   body {
     font-family: Arial, sans-serif;
