@@ -10,5 +10,66 @@ body {
 }
 
 .nav-items-wrapper{
-    background-color: var(--yellow);
+    background-color: var(--lightblue);
 }
+
+.swipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.swipecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 600px;
+    background-color: var(--lightyellow);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cross {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;  /* Fully circular */ 
+    background-color: var(--lightpink);
+}
+
+.cross:hover {
+    background-color: var(--pink);
+}
+
+.x {
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.checkmark {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;  /* Fully circular */ 
+    background-color: var(--lightgreen);
+}
+
+.checkmark:hover {
+    background-color: var(--green);
+}
+
+
+.check {
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
