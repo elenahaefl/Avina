@@ -45,7 +45,7 @@ header {
 .nav-items-wrapper{
   width: 100vw;
   height: 6vh;
-  margin-top: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
