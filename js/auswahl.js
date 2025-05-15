@@ -24,6 +24,21 @@
 //   window.addEventListener("load", checkAuth);
 
 
+async function loadData() {
+  const url = '/api/auswahl/readauswahl.php'; // mit korrekter API-URL ersetzen
+  try {
+      const response = await fetch(url);
+      return await response.json();
+  } catch (error) {
+      console.error(error);
+      return false;
+  }
+}
+
+const data = await loadData();
+console.log(data);
+
+
   document.addEventListener('DOMContentLoaded', function() {
     // Get all card elements
     const cards = document.querySelectorAll('.card');

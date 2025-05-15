@@ -17,13 +17,10 @@ $loggedInUserId = $_SESSION['user_id'];
 // Get the logged-in user's data
 // Get the logged-in user's data including email
 $stmt = $pdo->prepare("
-    SELECT 
-    *
-    FROM categories c
-    JOIN user_profiles p ON c.id = p.categories_id
+SELECT * FROM `categories` 
 ");
-$stmt->bindParam(':user_id', $loggedInUserId, PDO::PARAM_INT);
 $stmt->execute();
+
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
