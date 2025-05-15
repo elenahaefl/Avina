@@ -1,27 +1,27 @@
-async function checkAuth() {
-    try {
-      const response = await fetch("/api/auswahl.php", {
-        credentials: "include",
-      });
+// async function checkAuth() {
+//     try {
+//       const response = await fetch("/api/auswahl.php", {
+//         credentials: "include",
+//       });
   
-      if (response.status === 401) {
-        window.location.href = "/login.html";
-        return false;
-      }
+//       if (response.status === 401) {
+//         window.location.href = "/login.html";
+//         return false;
+//       }
   
-      const result = await response.json();
+//       const result = await response.json();
   
   
-      return true;
-    } catch (error) {
-      console.error("Auth check failed:", error);
-      window.location.href = "/login.html";
-      return false;
-    }
-  }
+//       return true;
+//     } catch (error) {
+//       console.error("Auth check failed:", error);
+//       window.location.href = "/login.html";
+//       return false;
+//     }
+//   }
   
-  // Check auth when page loads
-  window.addEventListener("load", checkAuth);
+//   // Check auth when page loads
+//   window.addEventListener("load", checkAuth);
 
 
   document.addEventListener('DOMContentLoaded', function() {
