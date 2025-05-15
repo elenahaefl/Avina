@@ -48,5 +48,13 @@ async function checkAuth() {
             console.log(`Card ${this.id} is ${this.classList.contains('selected') ? 'selected' : 'deselected'}`);
         });
     });
+
+    // Get the "Submit" button
+    const weiterBtn = document.querySelector('#weiterBtn');
+    weiterBtn.addEventListener('click', function() {
+        // WEiterleiten auf folgende Seite Swipe.html 
+        window.location.href = "swipe.html";
+    }
+    );
 });
   
