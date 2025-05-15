@@ -134,7 +134,7 @@ body {
 }
 
 .cardyellow.selected {
-    border: 8px solid var(--dark);  /* Border color for selected state */
+    border: 8px solid var(--darkyellow);  /* Border color for selected state */
     transform: scale(1.05);
 }
 
