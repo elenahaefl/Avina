@@ -42,6 +42,7 @@ console.log(data);
   document.addEventListener('DOMContentLoaded', function() {
     // Get all card elements
     const cards = document.querySelectorAll('.card');
+    console.log(cards)
     
     // Add click event listener to each card
     cards.forEach(card => {
