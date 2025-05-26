@@ -1,92 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auswahl</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/auswahl.css" />
-  </head>
-  <body>
-    <header class="header-container">
-        <nav class="nav-items-wrapper" aria-label="Main navigation">
-          <a class="nav-item" href="auswahl.html" aria-label="Home">
-            <img class="icons_categories" src="images/house.svg" alt="Home">
-          </a>
-    
-          <a class="nav-item" href="" aria-label="Search">
-            <img class="icons_categories" src="images/magnifying-glass.svg" alt="Search">
-          </a>
-    
-          <a class="nav-item" href="swipe.html" aria-label="Swipe">
-            <img class="icons_categories" src="images/hand-swipe-right.svg" alt="Swipe">
-          </a>
-    
-          <a class="nav-item" href="" aria-label="Chat">
-            <img class="icons_categories" src="images/chat-circle-dots.svg" alt="Chat">
-          </a>
-    
-          <a class="nav-item" href="profile.html" aria-label="User Profile">
-            <img class="icons_categories" src="images/user.svg" alt="User Profile">
-          </a>
-        </nav>
-      </header>
-      
-    <h1>AVINA</h1>
-    <h4>Was interessiert dich?</h4>
 
-    <!-- This is where we'll dynamically show the protected content -->
-    <div id="protectedContent"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auswahl</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auswahl.css" />
+</head>
 
-    <form action="createauswahl.php" method="post">
-      <input type="hidden" name="category_id" value="1"> <!-- z. B. Kategorie-ID 1 -->
-    </form>
+<body>
+  <header class="header-container">
+    <nav class="nav-items-wrapper" aria-label="Main navigation">
+      <a class="nav-item" href="auswahl.html" aria-label="Home">
+        <img class="icons_categories" src="images/house.svg" alt="Home">
+      </a>
 
-    <div class="containerbig">
-        <div class="container">
-            <div class="card cardpink" id="kreatives">
-                <object class="icons_categories" data="images/Brush.svg" type="image/svg+xml"></object>
-                <h5>Kreatives</h5>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="card cardgreen" id="wandern">
-                <object class="icons_categories" data="images/Wanderschuh.svg" type="image/svg+xml"></object>
-                <h5>Wandern</h5>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="card cardyellow" id="drinks">
-                <object class="icons_categories" data="images/Drinks.svg" type="image/svg+xml"></object>
-                <h5>Drinks</h5>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="card cardblue" id="wellness">
-                <object class="icons_categories" data="images/Waves.svg" type="image/svg+xml"></object>
-                <h5>Wellness</h5>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="card cardpink" id="events">
-                <object class="icons_categories" data="images/Events.svg" type="image/svg+xml"></object>
-                <h5>Events</h5>
-            </div>
-        </div> 
-        <div class="container">
-            <div class="card cardgreen" id="velo">
-                <object class="icons_categories" data="images/velo.svg" type="image/svg+xml"></object>
-                <h5>Biken</h5>
-            </div>
-        </div> 
+      <a class="nav-item" href="" aria-label="Search">
+        <img class="icons_categories" src="images/magnifying-glass.svg" alt="Search">
+      </a>
+
+      <a class="nav-item" href="swipe.html" aria-label="Swipe">
+        <img class="icons_categories" src="images/hand-swipe-right.svg" alt="Swipe">
+      </a>
+
+      <a class="nav-item" href="" aria-label="Chat">
+        <img class="icons_categories" src="images/chat-circle-dots.svg" alt="Chat">
+      </a>
+
+      <a class="nav-item" href="profile.html" aria-label="User Profile">
+        <img class="icons_categories" src="images/user.svg" alt="User Profile">
+      </a>
+    </nav>
+  </header>
+
+  <h1>AVINA</h1>
+  <h4>Was interessiert dich?</h4>
+
+  <!-- This is where we'll dynamically show the protected content -->
+  <div id="protectedContent"></div>
+
+  <form action="api/auswahl/createauswahl.php" method="post" id="auswahlForm">
+    <input type="hidden" name="category_id" value="1" id="inputCategory"> <!-- z. B. Kategorie-ID 1 -->
+  </form>
+
+  <div class="containerbig">
+    <div class="container">
+      <div class="card cardpink" id="kreatives" data-category-id="1">
+        <object class="icons_categories" data="images/Brush.svg" type="image/svg+xml"></object>
+        <h5>Kreatives</h5>
+      </div>
     </div>
-
-    <div class="weiterbutton">
-    <button class="logoutBtn" id="weiterBtn">Weiter</button>
+    <div class="container">
+      <div class="card cardgreen" id="wandern" data-category-id="2">
+        <object class="icons_categories" data="images/Wanderschuh.svg" type="image/svg+xml"></object>
+        <h5>Wandern</h5>
+      </div>
     </div>
+    <div class="container">
+      <div class="card cardyellow" id="drinks" data-category-id="3">
+        <object class="icons_categories" data="images/Drinks.svg" type="image/svg+xml"></object>
+        <h5>Drinks</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card cardblue" id="wellness" data-category-id="4">
+        <object class="icons_categories" data="images/Waves.svg" type="image/svg+xml"></object>
+        <h5>Wellness</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card cardpink" id="events" data-category-id="5">
+        <object class="icons_categories" data="images/Events.svg" type="image/svg+xml"></object>
+        <h5>Events</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card cardgreen" id="velo" data-category-id="6">
+        <object class="icons_categories" data="images/velo.svg" type="image/svg+xml"></object>
+        <h5>Biken</h5>
+      </div>
+    </div>
+  </div>
 
-    <div>
-    <script type="module" src="js/auswahl.js"></script> 
-  </body>
+
+  <button class="weiterbutton" id="weiterBtn">Weiter</button>
+
+
+  <div>
+    <script src="js/auswahl.js"></script>
+</body>
+
 </html>

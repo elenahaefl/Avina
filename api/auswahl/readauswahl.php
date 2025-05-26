@@ -16,23 +16,27 @@ $loggedInUserId = $_SESSION['user_id'];
 
 // Get the logged-in user's data
 // Get the logged-in user's data including email
-$stmt = $pdo->prepare("
-SELECT * FROM `categories` 
-");
-$stmt->execute();
 
 
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+// Hole das Profil der Userin
+$stmt = $pdo->prepare("SELECT id FROM user_profiles WHERE user_id = ?");
+$stmt->execute([$loggedInUserId]);
+$profile = $stmt->fetch();
 
-if ($user) {
+
+$test = $pdo->prepare("SELECT * FROM chosencategories WHERE personen_id = ?");
+$test->execute([$profile["id"]]);
+$chosencategories = $test->fetchAll(PDO::FETCH_ASSOC);
+
+if ($chosencategories) {
     header('Content-Type: application/json');
     echo json_encode([
         "status" => "success",
-        "user" => $user
+        "chosencategories" => $chosencategories
     ]);
 } else {
     http_response_code(404);
     header('Content-Type: application/json');
-    echo json_encode(["error" => "User not found"]);
+    echo json_encode(["error" => "User not found for user $loggedInUserId"]);
 }
 ?>

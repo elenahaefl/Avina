@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.nav-items-wrapper{
+.nav-items-wrapper {
     background-color: var(--lightyellow);
 }
 
@@ -21,9 +21,11 @@ header .icons_categories {
 .weiterbutton {
     background-color: #FFF6CC;
     padding-top: 30px;
-    color: white;
-    width: 50vw; /* Macht die Buttons responsiv */
-    max-width: 10vw; /* Maximale Breite für größere Bildschirme */
+    color: var(--darkyellow);
+    width: 50vw;
+    /* Macht die Buttons responsiv */
+    max-width: 10vw;
+    /* Maximale Breite für größere Bildschirme */
     border: 2px solid var(--yellow);
     border-radius: 15px;
     padding: 10px;
@@ -36,7 +38,7 @@ header .icons_categories {
 }
 
 
-  body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -46,20 +48,22 @@ header .icons_categories {
     min-height: 80vh;
     background-color: var(--beige);
 }
+
 .containerbig {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
-  }
-  
-  .container {
-    flex: 0 0 calc(33.333% - 20px); /* 3 Elemente pro Zeile (minus Abstand) */
+}
+
+.container {
+    flex: 0 0 calc(33.333% - 20px);
+    /* 3 Elemente pro Zeile (minus Abstand) */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-  }
+}
 
 .cardgreen {
     display: flex;
@@ -69,7 +73,8 @@ header .icons_categories {
     width: 150px;
     height: 150px;
     background-color: var(--green);
-    border-radius: 50%;  /* Fully circular */
+    border-radius: 50%;
+    /* Fully circular */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -83,8 +88,10 @@ header .icons_categories {
     justify-content: center;
     width: 150px;
     height: 150px;
-    background-color: var(--yellow);  /* Yellowish color */
-    border-radius: 50%;  /* Fully circular */
+    background-color: var(--yellow);
+    /* Yellowish color */
+    border-radius: 50%;
+    /* Fully circular */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -98,8 +105,10 @@ header .icons_categories {
     justify-content: center;
     width: 150px;
     height: 150px;
-    background-color: var(--pink);  /* Pinkish color */
-    border-radius: 50%;  /* Fully circular */
+    background-color: var(--pink);
+    /* Pinkish color */
+    border-radius: 50%;
+    /* Fully circular */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -113,8 +122,10 @@ header .icons_categories {
     justify-content: center;
     width: 150px;
     height: 150px;
-    background-color: var(--blue);  /* Blueish color */
-    border-radius: 50%;  /* Fully circular */
+    background-color: var(--blue);
+    /* Blueish color */
+    border-radius: 50%;
+    /* Fully circular */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -137,28 +148,33 @@ header .icons_categories {
 }
 
 .cardpink.selected {
-    border: 8px solid var(--darkpink);  /* Border color for selected state */
+    border: 8px solid var(--darkpink);
+    /* Border color for selected state */
     transform: scale(1.05);
 }
 
 .cardgreen.selected {
-    border: 8px solid var(--darkgreen);  /* Border color for selected state */
+    border: 8px solid var(--darkgreen);
+    /* Border color for selected state */
     transform: scale(1.05);
 }
 
 .cardblue.selected {
-    border: 8px solid var(--darkblue);  /* Border color for selected state */
+    border: 8px solid var(--darkblue);
+    /* Border color for selected state */
     transform: scale(1.05);
 }
 
 .cardyellow.selected {
-    border: 8px solid var(--darkyellow);  /* Border color for selected state */
+    border: 8px solid var(--darkyellow);
+    /* Border color for selected state */
     transform: scale(1.05);
 }
 
 .card:hover {
     transform: translateY(5px);
-    cursor: pointer;  /* Ensures hand cursor is shown on hover */
+    cursor: pointer;
+    /* Ensures hand cursor is shown on hover */
 }
 
 .icons_categories {
