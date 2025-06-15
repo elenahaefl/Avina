@@ -1,28 +1,7 @@
-async function checkAuth() {
-  try {
-    const response = await fetch("/api/swipe/readswipe.php", {
-      credentials: "include",
-    });
-
-    if (response.status === 401) {
-      window.location.href = "/login.html";
-      return false;
-    }
-
-    return true;
-  } catch (error) {
-    console.error("Auth check failed:", error);
-    window.location.href = "/login.html";
-    return false;
-  }
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
   const cardContainer = document.getElementById('swipecard');
   const likeBtn = document.getElementById('likeBtn');
   const dislikeBtn = document.getElementById('dislikeBtn');
-
-  let curthntActivity = null;
 
   // Fetch 1 activity from the server
   async function loadActivity() {
@@ -34,7 +13,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       const data = await response.json();
       currentActivity = data;
 
-      console.log(currentActivity);
       if (!currentActivity) {
         cardContainer.innerHTML = `
         <div class="no-activity">
