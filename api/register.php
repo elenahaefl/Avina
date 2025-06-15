@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             INSERT INTO user_profiles (user_id, firstname, lastname, birthdate)
             VALUES (:user_id, :firstname, :lastname, :birthdate)
         ");
+
+
         $insertProfile->execute([
             ':user_id'    => $userId,
             ':firstname' => $firstName,
