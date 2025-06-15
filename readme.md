@@ -124,6 +124,10 @@ Unser Figma-Prototyp war sehr detailliert – zu detailliert. Wir hatten viele I
 
 Wir starteten mit HTML, CSS und JavaScript, weil wir uns damit am sichersten fühlten. Die Datenbank – die uns weniger vertraut war – verschoben wir zu lange. Rückblickend hätten wir besser mit dem unbekannten Teil begonnen, da wir hier mehr Unterstützung brauchten, die gegen Ende des Projekts nur noch begrenzt verfügbar war.
 
+### Ausblick
+
+Wir haben in unserem Figma Projekt geplant, dass einzelne Gruppen erstellt werden können um in der Gruppe die passenden Aktivitäten zu finden. Da uns da jedoch die Zeit und das Wissen gefehlt hat um dies zu programmieren, haben wir dieses feature jetzt noch weggelassen. Dies könnte aber in einem nächsten Schritt noch ergänzt werden um die App spannender zu gestalten. 
+
 ## Mitwirkende
 
 - Julia Moos
