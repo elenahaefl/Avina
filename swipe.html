@@ -36,15 +36,19 @@
     <h1>AVINA</h1>
     <h4>Swipe deine Lieblingsaktivitäten</h4>
     <div class="swipe">
-        <div class="cross">
-            <img class="x" src="images/x.svg" alt="cross">
+        <div class="cross" id="dislikeBtn">
+            <img class="x" src="images/x.svg" alt="Dislike">
         </div>
-        <div class="swipecard" id="swipecard"></div>
-
-        <div class="checkmark">
-            <img class="check" src="images/check.svg" alt="check">
+    
+        <div class="swipecard" id="swipecard">
+            <!-- Activity content will be injected here -->
+        </div>
+    
+        <div class="checkmark" id="likeBtn">
+            <img class="check" src="images/check.svg" alt="Like">
         </div>
     </div>
+    
     <div id="protectedContent"></div>
 
     <script src="js/swipe.js"></script>
